@@ -1,46 +1,82 @@
-# Login and Contact Management System
+# 🔐 Login & Contact Management | 👤 User Registration | ✅ Task Tracker (Spring Boot + React)
 
-## 🚀 Project Overview
-
-This is a secure, full-stack web application that enables users to register, log in, and manage their personal contacts. Each user has private access to their own data, ensuring information is isolated and secure.
+A collection of 3 full-stack web applications built using **React (frontend)** and **Spring Boot (backend)**. Each application demonstrates essential concepts in authentication, CRUD operations, form validation, and user-specific data handling.
 
 ---
 
-## ✨ Key Features
+## 📁 Project Modules
 
-- 🔐 **User Authentication**
-  - Secure login functionality
-  - Session persistence using local storage
+### 1. 🔐 Login and Contact Management System
 
-- 📇 **Contact Management**
-  - Add, view, and delete personal contacts
-  - Each user can only access their own contacts
+#### 📌 Overview:
+A secure system that allows users to **log in** and **manage personal contacts**. All contacts are private and tied to the authenticated user.
 
-- 🔒 **Data Privacy**
-  - Contacts are filtered based on the logged-in user
-  - Backend authorization ensures users can't access each other’s data
+#### ✅ Features:
+- User login and session management
+- Add, view, and delete personal contacts
+- Contact data is private per user
 
----
+#### 🧰 Tech Stack:
+- **Frontend (React):**
+  - React Router for routing between login and dashboard
+  - useContext/localStorage for session state
+  - Axios for secure API calls
 
-## 🛠 Technologies Used
-
-### 🔹 Frontend (React)
-- **React** for building the user interface
-- **React Router** for page navigation (Login, Dashboard, etc.)
-- **Axios** for API communication
-- **useContext / props** for state management
-- **Local Storage** for maintaining session state
-
-### 🔸 Backend (Spring Boot)
-- **Spring Boot** for RESTful backend service
-- **JPA & Hibernate** for ORM and database access
-- **Entity Mapping**
-  - `User` ↔️ `Contact` (OneToMany relationship)
-- **Login API** for authentication
-- Optional: **Spring Security** for enhanced authorization and access control
+- **Backend (Spring Boot):**
+  - `User` & `Contact` entities (OneToMany)
+  - User authentication API
+  - Contact filtering by user
+  - Optional: Role-based authorization using Spring Security
 
 ---
 
-## 📁 Project Structure
+### 2. 👤 User Registration and Profile Viewer
 
-### Frontend (React)
+#### 📌 Overview:
+Allows users to **register**, view their profiles, and gives **admins** the ability to view all registered users.
+
+#### ✅ Features:
+- User registration form with validation
+- View profile details
+- Admin interface to list all users
+
+#### 🧰 Tech Stack:
+- **Frontend (React):**
+  - Form validation and error display
+  - Dynamic routing (React Router)
+  - Tabular user list rendering
+
+- **Backend (Spring Boot):**
+  - `User` entity with fields: name, email, password
+  - APIs for registration and profile fetch
+  - Input validation using `@Email`, `@NotBlank`
+  - Optional: Password encryption with `BCrypt`
+
+---
+
+### 3. ✅ Task Management System with Status Tracking
+
+#### 📌 Overview:
+A productivity app for users to **create**, **update**, and **track tasks** through different stages (Pending → In Progress → Completed).
+
+#### ✅ Features:
+- Add tasks with title & description
+- Update task status
+- Delete tasks
+- Filter tasks by status
+
+#### 🧰 Tech Stack:
+- **Frontend (React):**
+  - `useState` / `useEffect` for local state and effects
+  - Controlled inputs for task creation/update
+  - Dropdowns for status selection
+  - Axios for REST calls
+
+- **Backend (Spring Boot):**
+  - `Task` entity with title, description, status (Enum)
+  - Full CRUD REST API
+  - H2/MySQL database support
+  - Input validation with `@Valid`
+  - Global exception handling
+  
+---
